@@ -71,7 +71,7 @@ const Chat = React.createClass({
           <ul>
             {this.props.messages.map((msg,i) => (
               <li key={'message-' + i}>
-                {msg.message}
+                {msg.message}{+new Date}
               </li>
             ))}
           </ul>
