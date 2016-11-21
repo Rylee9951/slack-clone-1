@@ -58,6 +58,14 @@ const Chat = React.createClass({
       userInput: ''
     })
   },
+  timeStamp: function (e) {
+    var a = +new Date
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = hour + ':' + min + ':' + sec ;
+  return time; 
+  },
   render: function () {
     return (
       <div id='container'>
@@ -71,7 +79,7 @@ const Chat = React.createClass({
           <ul>
             {this.props.messages.map((msg,i) => (
               <li key={'message-' + i}>
-                {msg.message}{+new Date}
+                {msg.message}{this.timeStamp}
               </li>
             ))}
           </ul>
